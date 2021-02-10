@@ -60,63 +60,39 @@ function TradingCard(props) {
   );
 }
 
-ReactDOM.render(
-  (
-    <TradingCard
-      name="Balloonicorn"
-      skill="video games"
-      imgUrl="/static/img/balloonicorn.jpg"
-    />
-  ),
-  document.querySelector('#balloonicorn')
-);
+// define TradingCard component
+   // render one trading card
+
+// define TradingCardContainer component
+// loop over each data point
+  // and make a TradingCard component
+  // return all those TradingCard's we made
+
+  // mount just ONE thing onto the page:
+// one TradingCardContainer component
+
+// define TradingCardContainer component
+function TradingCardContainer() {
+  const tradingCards = [];
+
+  for (const currentCard of tradingCardData) {
+    tradingCards.push(
+      <TradingCard
+        name={currentCard.name}
+        skill={currentCard.skill}
+        imgUrl={currentCard.imgUrl}
+      />
+    );
+  }
+
+  return (
+    <React.Fragment>
+      {tradingCards}
+    </React.Fragment>
+  );
+}
 
 ReactDOM.render(
-  (
-    <TradingCard
-      name="Float"
-      skill="baking pretzels"
-      imgUrl="/static/img/float.jpg"
-    />
-  ),
-  document.querySelector('#float')
+    <TradingCardContainer/>,
+  document.querySelector('#all-cards') 
 );
-
-ReactDOM.render(
-  (
-    <TradingCard
-      name="Llambda"
-      skill="knitting scarves"
-      imgUrl="/static/img/llambda.jpg"
-    />
-  ),
-  document.querySelector('#llambda')
-);
-
-ReactDOM.render(
-  (
-    <TradingCard
-      name="Shortstack Overflow"
-      skill="telling jokes"
-      imgUrl="/static/img/shortstack-overflow.jpg"
-    />
-  ),
-  document.querySelector('#shortstack')
-);
-
-ReactDOM.render(
-  (
-    <TradingCard
-      name="SeedPy"
-      skill="juggling"
-      imgUrl="/static/img/seedpy.jpg"
-    />
-  ),
-  document.querySelector('#seedpy')
-);
-
-// for (const data of tradingCardData) {
-//   console.log(data.name);
-//   console.log(data.skill);
-// }
-
